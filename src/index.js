@@ -10,7 +10,8 @@ import {
 } from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: 'https://delivery-food-backend.herokuapp.com/graphql/',
+  //uri: 'http://127.0.0.1:8000/api/graphql',
+  uri: 'https://backend-authql.herokuapp.com/api/graphql',
   cache: new InMemoryCache(),
 
 });

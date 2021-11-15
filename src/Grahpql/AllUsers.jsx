@@ -4,24 +4,16 @@ import Usuarios from '../components/Usuarios';
 
 
 const GET_ROCKET_INVENTORY = gql`
-query allUsers{
-  allUsers{
-    edges{
-      node{
-        id
-        email
-        password
-        isActive
-        type
-        contact{
-          edges{
-            node{
-              names
-              lastnames
-              location
-            }
-          }
-        }
+query w{
+  users {
+    edges {
+      node {
+        id,
+        firstName,
+        archived,
+        verified,
+        email,
+        secondaryEmail,
       }
     }
   }
@@ -38,7 +30,7 @@ function AllUsers() {
   return (
     <Fragment>
       {
-        data.allUsers.edges.map(user =>(
+        data.users.edges.map(user =>(
           <Usuarios key={user.node.id} user={user.node}/>
         ))
       }
